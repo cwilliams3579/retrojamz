@@ -1,0 +1,340 @@
+/* Required height of parents of the Half Page Carousel for proper displaying carousel itself */
+
+
+html,
+body,
+.view {
+  height: 100%; }
+
+/* Half Page Carousel itself*/
+.carousel {
+  height: 50%; }
+  .carousel .carousel-inner {
+    height: 100%; }
+    .carousel .carousel-inner .carousel-item,
+    .carousel .carousel-inner .active {
+      height: 100%; }
+
+/* Adjustment for mobile devices*/
+@media (max-width: 776px) {
+  .carousel {
+    height: 100%; } }
+
+/* Footer color for sake of consistency with Navbar */
+.page-footer {
+  background-color: #000000; }
+
+  .twitter {
+    color: #1da1f2;
+  }
+
+  .fb-ic {
+    color: #3B5998;
+  }
+
+  .drib-ic {
+    color: #ea4c89;
+  }
+
+  .gold-gradient {
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+}
+
+
+.mt {
+  margin-top: 100px;
+}
+
+.mt-2x {
+  margin-top: 200px;
+}
+
+.mb {
+  margin-bottom: 100px;
+}
+.mb-2x {
+  margin-bottom: 200px;
+}
+
+.gold-text, .card-title a {
+  color: #DA22FF,
+  #9733EE !important;
+}
+
+.pg-text {
+  background: -webkit-linear-gradient(#DA22FF, #9733EE) !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-outline-gold {
+  border: 2px solid #D5AD6D !important;
+  background-color: transparent !important;
+  color: #D5AD6D !important; }
+
+.mx-auto {
+  text-align: center !important;
+  margin: 0 auto !important;
+  max-width: 100%;
+}
+
+.sn-bg-1 {
+    background-image: url(samurai-red-background.jpg) !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.carousel-item img {
+  width: 1110px;
+  height: 575px;
+}
+
+
+.black-skin .carousel-multi-item .carousel-indicators li, .carousel-indicators li.active, .black-skin .carousel-multi-item .controls-top>a {
+    background-color: purple;
+}
+
+
+
+.container-small .card,
+.card-block {
+  background: #000000;
+}
+
+
+.fa-fonts {
+  color: goldenrod !important;
+}
+
+.card .card-block .form-header, .form-header {
+  background: transparent;
+  border: 2px solid purple;
+}
+
+
+.purple-border {
+  border: 1px solid purple !important;
+}
+
+.purple-border-4x {
+  border: 4px solid purple !important;
+}
+
+.purple-border-2x {
+  border: 4px solid purple !important;
+}
+
+.gal-img {
+  width: 370px;
+  height: 555px !important;
+}
+
+header, main, footer {
+padding-left: 240px;
+}
+
+@media only screen and (max-width : 992px) {
+header, main, footer {
+  padding-left: 0;
+}
+}
+
+
+.btn-img {
+    width: 40% !important;
+    background-position: center;
+    background-size: contain;
+    // text-indent:30px;
+    // display:block;
+    cursor: pointer;
+}
+
+
+
+.fm-fonts {
+  color: #fff !important;
+  font-size: 18px !important;
+}
+
+.pt-img {
+  width: 350px !important;
+  height: 100% !important;
+}
+
+.mt {
+  margin-top: 100px !important;
+}
+
+.mt-2x {
+  margin-top: 200px !important;
+}
+
+.mb {
+  margin-bottom: 100px !important;
+}
+
+.mb-2x {
+  margin-bottom: 200px !important;
+}
+
+select{
+ display: block !important;
+}
+
+.select_tag {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    display: block !important;
+}
+
+.black-skin .side-nav .collapsible li .collapsible-header:hover {
+    background-color: goldenrod !important;
+}
+
+.black-skin .card-header, .black-skin .form-header {
+    background-color: #000000 !important;
+    border: 2px solid goldenrod;
+    font-family: 'UnifrakturCook', cursive !important;
+    font-size: 2em !important;
+    color: #DAA520 !important;
+}
+
+.fa-spin-hover:hover {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+#star-rating img:hover {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+.star-rating img:hover {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+
+// Container Sizes
+
+@media (min-width: 768px) {
+    .container-small {
+        width: 300px;
+    }
+    .container-large {
+        width: 970px;
+    } 
+} 
+@media (min-width: 992px) {
+    .container-small {
+        width: 500px;
+    }
+    .container-large {
+        width: 1170px;
+    } 
+} 
+@media (min-width: 1200px) {
+    .container-small {
+        width: 700px;
+    }
+    .container-large {
+        width: 1500px;
+    } 
+}
+
+.container-small, .container-large {
+    max-width: 100%;
+}
+
+a.waves-effect, a.waves-light {
+    display: inherit !important;
+}
+
+.black-skin .side-nav .collapsible li .collapsible-header.active {
+    background-color: purple;
+}
+
+.black-skin .side-nav .collapsible li .collapsible-body a:hover {
+    color: goldenrod;
+}
+
+.card-img-top {
+  max-width: 100% !important; 
+  height: 297px !important;
+}
+
+
+// Rocket
+
+#scrolltop {
+  display: none;
+}
+
+#rocketmeluncur {
+  position: fixed;
+  bottom: 50px;
+  z-index: 7;
+  display: none;
+  visibility: hidden;
+  width: 26px;
+  height: 48px;
+  right: 25px;
+  background: url(https://3.bp.blogspot.com/-GZOBULN1Q4s/VbNxQrf37EI/AAAAAAAAAPk/rak337seJ70/s1600/Ask.png) no-repeat 50% 0;
+  opacity: 0;
+  -webkit-transition: visibility .6s cubic-bezier(0.6, 0.04, 0.98, 0.335), opacity .6s cubic-bezier(0.6, 0.04, 0.98, 0.335), -webkit-transform .6s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  -moz-transition: visibility .6s cubic-bezier(0.6, 0.04, 0.98, 0.335), opacity .6s cubic-bezier(0.6, 0.04, 0.98, 0.335), -moz-transform .6s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  transition: visibility .6s cubic-bezier(0.6, 0.04, 0.98, 0.335), opacity .6s cubic-bezier(0.6, 0.04, 0.98, 0.335), transform .6s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+}
+
+#rocketmeluncur i {
+  display: block;
+  margin-top: 48px;
+  height: 14px;
+  background: url(https://1.bp.blogspot.com/-UR9I7YEuEUY/VXIJn8MrBPI/AAAAAAAAKRE/qZObHBd5zIo/s1600/rocket.png) no-repeat 50% -48px;
+  opacity: .5;
+  -webkit-transition: -webkit-transform .2s;
+  -moz-transition: -moz-transform .2s;
+  transition: transform .2s;
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  transform-origin: 50% 0
+}
+
+#rocketmeluncur:hover {
+  background-position: 50% -62px
+}
+
+#rocketmeluncur:hover i {
+  background-position: 50% 100%;
+  -webkit-animation: flaming .7s infinite;
+  -moz-animation: flaming .7s infinite;
+  animation: flaming .7s infinite
+}
+
+#rocketmeluncur.showrocket {
+  visibility: visible;
+  opacity: 1
+}
+
+#rocketmeluncur.launchrocket {
+  background-position: 50% -62px;
+  opacity: 0;
+  -webkit-transform: translateY(-800px);
+  -moz-transform: translateY(-800px);
+  -ms-transform: translateY(-800px);
+  transform: translateY(-800px);
+  pointer-events: none
+}
+
+#rocketmeluncur.launchrocket i {
+  background-position: 50% 100%;
+  -webkit-transform: scale(1.4, 3.2);
+  -moz-transform: scale(1.4, 3.2);
+  transform: scale(1.4, 3.2)
+}

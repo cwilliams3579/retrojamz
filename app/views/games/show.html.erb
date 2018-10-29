@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Platform:</strong>
+  <%= @game.platform %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @game.company %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @game.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @game.content %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @game.release_date %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>

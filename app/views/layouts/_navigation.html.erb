@@ -1,19 +1,178 @@
-<%# navigation styled for Bootstrap 4.0 %>
-<div class="container">
-  <nav class="navbar navbar-dark bg-inverse">
-    <ul class="nav navbar-nav clearfix">
+<!--Double navigation-->
+<header>
+  <!-- Sidebar navigation -->
+  <div id="slide-out" class="side-nav fixed sn-bg-1 custom-scrollbar">
+    <ul class="custom-scrollbar">
+      <!-- Logo -->
+      <li>
+        <div class="logo-wrapper waves-light" style="height:170px !important;">
+          <%= link_to (image_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-btn.png?raw=true")), root_path, class: "img-fluid flex-center", id:"lion-logo", rel: "gallery", onclick:"loadContent(1)" %>
+        </div>
+      </li>
+
+      <li>
+          <a href="/" class="navbar-brand text-center white-text" style="font-family: 'UnifrakturCook', cursive !important; font-size:2em !important; color: #DAA520 !important;">RetroJamz</a>
+      </li>
+      <!--/. Logo -->
+
+      <!--Search Form-->
+      <li>
+        <%#= form_tag search_games_path, method: :get, class: "search-form" do %>
+          <div class="form-group md-form mt-0 pt-1 waves-light">
+            <%#= text_field_tag :search, params[:search], class: "form-control white-text", placeholder: "Search" %>
+            <%#= submit_tag "Seach", name: nil, class: "btn btn-outline-gold" %>
+          </div>
+        <%# end %>
+      </li>
+      <!--/.Search Form-->
+
+      <!-- Side navigation links -->
+      <li>
+        <ul class="collapsible collapsible-accordion">
+            <li>
+              <a class="collapsible-header waves-effect arrow-r indie-font"><i class="fa fa-book"></i> Games<i class="fa fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul class="list-unstyled">
+                    <li><a href="/books" class="waves-effect">Games</a>
+                    </li>
+                    <%# if can? :create, @game %>
+                      <li>
+                        <a href="/books/new" class="waves-effect">New Game</a>
+                      </li>
+                    <%# end %>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a class="collapsible-header waves-effect arrow-r indie-font"><i class="fa fa-eye"></i> Browse<i class="fa fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul class="list-unstyled">
+                    <li>
+                      <%# Category.all.each do |category| %>
+                        <%#= link_to category.name, books_path(category: category.name), class: "dropdown-item" %>
+                      <%# end %>
+                    </li>
+                    <%# if can? :create, @category %>
+                      <li>
+                        <%#= link_to 'New Category', new_category_path %>
+                      </li>
+                    <%# end %>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a class="collapsible-header waves-effect arrow-r indie-font"><i class="fa fa-camera-retro"></i> Gallery<i class="fa fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul class="list-unstyled">
+                    <li><a href="/pages/gallery" class="waves-effect">Image Gallery</a>
+                    </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a class="collapsible-header waves-effect arrow-r indie-font"><i class="fa fa-eye"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="/pages/about" class="waves-effect">About Me</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a class="collapsible-header waves-effect arrow-r indie-font"><i class="fa fa-envelope"></i> Contact me<i class="fa fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#" class="waves-effect">FAQ</a>
+                  </li>
+                  <li>
+                    <a href="#" class="waves-effect">Write a message</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+        </ul>
+      </li>
+      <!-- Side navigation links -->
+    </ul>
+    <div class="sidenav-bg mask-strong"></div>
+  </div>
+  <!--/. Sidebar navigation -->
+  <!-- Navbar -->
+  <nav class="navbar fixed-top black navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+    <!-- SideNav slide-out button -->
+    <div class="float-left">
+      <a href="#" data-activates="slide-out" class="button-collapse">
+        <img src="https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-btn.png?raw=true" style="width:80px;">
+      </a>
+    </div>
+    <!-- Breadcrumb-->
+    <div class="breadcrumb-dn mr-auto">
+      <a href="/" class="navbar-brand text-center white-text" style="font-family: 'UnifrakturCook', cursive !important; font-size:2em !important; color: #DAA520 !important;">Retro Jamz</a>
+    </div>
+    <ul class="nav navbar-nav">
       <li class="nav-item">
-        <button class="navbar-toggler hidden-sm-up nav-link" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
-          &#9776;
-        </button>
+        <%#= form_tag search_books_path, method: :get, class: "search-form center" do %>
+          <div class="form-group md-form mt-0 pt-1 waves-light">
+            <div class="btn-group">
+              <%#= text_field_tag :search, params[:search], class: "form-control white-text indie-font", placeholder: "Search" %>
+              <%#= submit_tag " ", name: nil do %>
+              <%#= image_tag("http://files.softicons.com/download/system-icons/purplesilver-icons-by-kidaubis/png/256/Search.png") %>
+                <%# end %>
+            </div>
+          </div>
+        <%# end %>
       </li>
     </ul>
-    <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-      <%= link_to "Rails bootstrap", root_path, class: 'navbar-brand' %>
-      <ul class="nav navbar-nav">
-        <%= render 'layouts/navigation_links' %>
-        <%= render 'layouts/nav_links_for_auth' %>
+    <ul class="nav navbar-nav nav-flex-icons ml-auto">
+      <li class="nav-item">
+        <a href="/books" class="nav-link">
+          <i class="fa fa-book goldenrod"></i>
+          <span class="clearfix d-none d-sm-inline-block indie-font">Games</span></a>
+      </li>
+      <li class="nav-item">
+        <a href="/posts" class="nav-link">
+          <i class="fas fa-comments goldenrod"></i>
+          <span class="clearfix d-none d-sm-inline-block indie-font">Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a href="/pages/gallery" class="nav-link">
+          <i class="fas fa-camera-retro goldenrod"></i>
+          <span class="clearfix d-none d-sm-inline-block indie-font">Gallery</span></a>
+      </li>
+      <li class="nav-item">
+        <a href="/pages/about" class="nav-link">
+          <i class="fas fa-id-card goldenrod"></i>
+          <span class="clearfix d-none d-sm-inline-block indie-font">About</span></a>
+      </li>
+      <% if current_user %>
+      <li class="nav-item">
+        <%#= current_user.first_name %>
+        <%= link_to gravatar_for(current_user), edit_user_registration_path, size: 20, :class => 'gravatar nav-link' %>
+        <span class="clearfix d-none d-sm-inline-block"></span>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" rel="nofollow" data-method="delete" href="/users/sign_out">
+          <i class="fas fa-sign-out-alt goldenrod"></i>
+          <span class="hidden-sm-down indie-font">Sign Out</span>
+        </a>
+      </li>
+
+        <% else %>
+          <li class="nav-item">
+            <a href="/users/sign_up" class="nav-link">
+              <i class="fas fa-user-plus goldenrod"></i>
+              <span class="clearfix d-none d-sm-inline-block indie-font">Sign Up</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="/users/sign_in" class="nav-link">
+              <i class="fas fa-sign-in-alt goldenrod"></i>
+              <span class="clearfix d-none d-sm-inline-block indie-font">Sign In</span></a>
+          </li>
+        <% end %>
       </ul>
-    </div>
-  </nav>
-</div>
+    </nav>
+    <!-- /.Navbar -->
+  </header>
+  <!--/.Double navigation-->

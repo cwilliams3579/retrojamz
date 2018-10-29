@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_29_204845) do
+ActiveRecord::Schema.define(version: 2018_10_29_211336) do
+
+  create_table "games", force: :cascade do |t|
+    t.string "platform"
+    t.string "genre"
+    t.string "company"
+    t.string "image"
+    t.string "title"
+    t.text "content"
+    t.date "release_date"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_games_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

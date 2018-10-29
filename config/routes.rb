@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'visitors#index'
+  resources :games
+  root to: 'games#index'
   devise_for :users
   resources :users
 end

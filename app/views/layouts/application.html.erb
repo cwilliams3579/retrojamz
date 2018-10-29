@@ -2,13 +2,14 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Retrojamz" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Retro Jamz" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Retrojamz" %>">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <body class="fixed-sn black-skin">
     <header>
       <%= render 'layouts/navigation' %>
     </header>

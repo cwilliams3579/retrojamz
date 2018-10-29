@@ -1,0 +1,354 @@
+.navbar-brand, .title-font goldenrod {
+  font-family: 'UnifrakturCook', cursive !important;
+  color: #DAA520 !important;
+}
+
+.indie-font {
+  font-family: 'Eagle Lake', cursive;
+}
+
+$primary-green: #21403F;
+$indigo: #3D466D;
+$orange-grad: #fc4a1a, #f7b733;
+$gold: #DAA520;
+
+.gold {
+  background: $gold;
+}
+
+.gold-text {
+  color: $gold !important;
+}
+
+.navy-text {
+  color: #000080;
+}
+
+@media (min-width: 768px) {
+  .container-small {
+    width: 300px;
+  }
+  .container-large {
+    width: 970px;
+  }
+}
+@media (min-width: 992px) {
+  .container-small {
+    width: 500px;
+    margin: 0 auto;
+  }
+  .container-large {
+    width: 1170px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-small {
+    width: 700px;
+  }
+  .container-large {
+    width: 1500px;
+  }
+}
+
+.container-small, .container-large {
+  max-width: 100%;
+}
+
+
+  .star-rating {
+    display: inline-flex;
+  }
+
+
+.img-fluid {
+  width: 100% !important;
+  // height: auto;
+}
+
+.nav-link, #navbar-brand{
+  border: none !important;
+}
+
+#navbar-brand {
+  font-size: 1.3em !important;
+}
+
+.container-about {
+  height: 20% !important;
+}
+
+.navbar-brand {
+  font-size: 1.3em !important;
+}
+
+
+
+  /***** Content *****/
+
+  body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+  }
+
+  strong { font-weight: 700; }
+
+  a, a:hover, a:focus {
+    color: $orange-grad;
+    text-decoration: none;
+    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+  }
+
+  img { max-width: 100%; }
+
+
+
+  /***** Header *****/
+
+
+  .call-us {
+    font-size: 18px;
+    line-height: 22px;
+    text-align: right;
+  }
+
+
+  /***** Content *****/
+
+  .social {
+    //margin-top: 50px;
+    // padding-bottom: 50px;
+    text-align: center;
+  }
+
+  .social a {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    margin: 3px;
+    padding-top: 9px;
+    // background: #555;
+    -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%;
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .social a:hover, .social a:focus { outline: 0; background: $gold; }
+
+
+  /***** Media Queries *****/
+
+
+  .form-input {
+    // color: #fff !important;
+  }
+
+  .blue-gradient {
+    background: #000000 !important;
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #000000 0%, #062a64 100%) !important;
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #000000 0%, #062a64 100%) !important;
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #000000 0%, #062a64 100%) !important;
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#062a64',GradientType=1 ) !important;
+    /* IE6-9 fallback on horizontal gradient */ }
+
+
+    .map-responsive{
+      overflow:hidden;
+      padding-bottom:56.25%;
+      position:relative;
+      height:0;
+    }
+    .map-responsive iframe{
+      left:0;
+      top:0;
+      height:100%;
+      width:100%;
+      position:absolute;
+    }
+    /*Back to top button */
+    /***********************************************************************************************/
+    .go-top {
+      position: fixed;
+      bottom: 2em;
+      right: 2em;
+      text-decoration: none;
+      color: white;
+      // background-color: rgba(0, 0, 0, 0.3);
+      font-size: 12px;
+      padding: 1em;
+      display: none;
+    }
+
+    .go-top:hover {
+      // background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .logo-wrapper {
+      #icon {
+        width: 100% !important;
+        height:150px;
+        padding: 20px;
+      }
+    }
+
+    // .side-nav .logo-wrapper {
+    //   height: 350px !important;
+    // }
+
+    .lion-btn {
+      width: 100px !important;
+    }
+
+
+    .side-nav .logo-wrapper, .side-nav .logo-wrapper a {
+      height:10vh !important;
+      width: 100%;
+      background-color: transparent;
+      border: none !important;
+    }
+
+    .side-nav .logo-wrapper img {
+      // padding-left: 0px !important;
+      // padding-right: 0px !important;
+      padding-top: 7%;
+      padding-bottom: 0;
+  }
+
+    #icon {
+      text-shadow: rgb(26, 51, 52) 0px 0px 0px, rgb(26, 52, 52) 1px 1px 0px, rgb(27, 52, 53) 2px 2px 0px, rgb(27, 53, 54) 3px 3px 0px, rgb(27, 54, 54) 4px 4px 0px, rgb(27, 54, 55) 5px 5px 0px, rgb(28, 55, 56) 6px 6px 0px, rgb(28, 55, 56) 7px 7px 0px, rgb(28, 56, 57) 8px 8px 0px, rgb(29, 57, 58) 9px 9px 0px, rgb(29, 57, 58) 10px 10px 0px, rgb(29, 58, 59) 11px 11px 0px, rgb(30, 59, 59) 12px 12px 0px, rgb(30, 59, 60) 13px 13px 0px, rgb(30, 60, 61) 14px 14px 0px, rgb(31, 60, 61) 15px 15px 0px, rgb(31, 61, 62) 16px 16px 0px, rgb(31, 62, 63) 17px 17px 0px, rgb(32, 62, 63) 18px 18px 0px, rgb(32, 63, 64) 19px 19px 0px, rgb(32, 64, 64) 20px 20px 0px, rgb(33, 64, 65) 21px 21px 0px, rgb(33, 65, 66) 22px 22px 0px, rgb(33, 65, 66) 23px 23px 0px, rgb(34, 66, 67) 24px 24px 0px, rgb(34, 67, 68) 25px 25px 0px, rgb(34, 67, 68) 26px 26px 0px, rgb(34, 68, 69) 27px 27px 0px, rgb(35, 69, 70) 28px 28px 0px, rgb(35, 69, 70) 29px 29px 0px, rgb(35, 70, 71) 30px 30px 0px, rgb(36, 70, 71) 31px 31px 0px, rgb(36, 71, 72) 32px 32px 0px, rgb(36, 72, 73) 33px 33px 0px, rgb(37, 72, 73) 34px 34px 0px; font-size: 80px; color: rgb(255, 255, 255); height: 150px; width: 150px; line-height: 150px; border-radius: 0%; text-align: center; #background-color: rgb(37, 73, 74);
+      font-family: 'Pacifico', cursive;
+      color: #eef2f3 !important;
+    }
+
+    #review-star:active {
+      color: #ffbb33 !important;
+    }
+
+    #nancy-logo {
+      width: 100%;
+    }
+
+    #icon {
+      background-image: url("lion-logo.png") no-repeat center center;
+      background-size: cover;
+      position: relative;
+      width: 100%;
+      // height: 55vh !important;
+      z-index: -1;
+      margin-bottom: 0px;
+      text-shadow: black 0.3em 0.3em 0.3em;
+      // background:transparent;
+    }
+
+
+#gallery-img {
+  width: 100%;
+  height: 42vh;
+}
+
+.cyan-skin .card-header, .cyan-skin  {
+    background-color: $gold;
+}
+
+.fa-question-circle {
+  font-size: 200px !important;
+  height: 100vh !important;
+}
+
+.exercise-text {
+  // font-size: 72px;
+  margin-top: 15px;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// .orange-gradient {
+//   background: -webkit-linear-gradient(#fc4a1a, #f7b733);
+// }
+
+// .orange-gradient-text {
+//   color: #fc4a1a, #f7b733 !important;
+// }
+
+ .md-form .prefix.active {
+  color: purple;
+}
+
+.md-form .prefix.active {
+  color: -webkit-linear-gradient(purple) !important;
+}
+
+ .gallery-text {
+  // font-size: 72px;
+  background: -webkit-linear-gradient(#000000, #434343) !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card {
+  padding: 20px;
+}
+
+#md-form {
+  margin-top: 40px;
+  margin-right: 0px;
+  margin-bottom: 40px;
+  margin-left: 0px;
+}
+
+.indigo-skin .card-header, .indigo-skin .form-header {
+  background-color: #1d1d1d;
+}
+
+
+.center {
+  text-align: center !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+
+.social a:hover,
+.social a:focus {
+  // outline: 0;
+//   background-color:goldenrod;
+
+  background: -webkit-linear-gradient(#DAA520, #DAA520);
+  background: -moz-linear-gradient(#DAA520, #DAA520);
+  background: -o-linear-gradient(#DAA520, #DAA520);
+  background: linear-gradient(#DAA520, #DAA520);
+  -webkit-transition: background 1s ease-out;
+  -moz-transition: background 1s ease-out;
+  -o-transition: background 1s ease-out;
+  transition: background 1s ease-out;
+  border: 1px solid #fff;
+  cursor:pointer;
+
+}
+
+ .side-nav, .page-footer {
+   background: -webkit-linear-gradient(#000000, #434343) !important;
+   background: -moz-linear-gradient(#000000, #434343);
+  background: -o-linear-gradient(#000000, #434343);
+  background: linear-gradient(#000000, #434343);
+}
+
+.lion {
+  height: 360px !important;
+  width: 540px;
+}
+
+.samurai {
+  width: 1320px;
+  height: 583px;
+}
+
+.goldenrod {
+  color: goldenrod !important;
+}
