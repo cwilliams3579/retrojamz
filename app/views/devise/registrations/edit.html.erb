@@ -1,41 +1,53 @@
-<div class="authform">
-  <h3>Edit <%= resource_name.to_s.humanize %></h3>
-  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
-    <%= devise_error_messages! %>
-    <div class="form-group">
-      <%= f.label :name %>
-      <%= f.text_field :name, :autofocus => true, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+<% content_for :title do %>Edit Account<% end %>
+<div class="container-small mt-2x white-text">
+  <div class="card purple-border-4x">
+    <div class="card-block">
+      <div class="form-header indie-font">
+        <h3 class="indie-font">Edit <%= resource_name.to_s.humanize %></h3>
+      </div>
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="md-form">
+          <i class="fas fa-user fa-fonts prefix"></i>
+          <%= f.text_field :name, :autofocus => true, class: 'form-control fm-fonts' %>
+        </div>
+        <div class="md-form">
+          <i class="fas fa-envelope fa-fonts prefix"></i>
+          <%= f.email_field :email, class: 'form-control fm-fonts' %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+        </div>
+        <fieldset>
+          <p class="text-center">Leave these fields blank if you don't want to change your password.</p>
+          <div class="md-form">
+            <i class="fas fa-lock fa-fonts prefix"></i>
+            <%= f.password_field :password, :autocomplete => 'off', class: 'form-control fm-fonts' %>
+          </div>
+          <div class="md-form">
+            <i class="fas fa-lock fa-fonts prefix"></i>
+            <%= f.password_field :password_confirmation, class: 'form-control fm-fonts' %>
+          </div>
+        </fieldset>
+        <fieldset>
+          <p class="text-center">You must enter your current password to make changes.</p>
+          <div class="md-form">
+            <i class="fas fa-lock fa-fonts prefix"></i>
+            <%= f.password_field :current_password, class: 'form-control fm-fonts' %>
+          </div>
+        </fieldset>
+        <div class="mx-auto" style="width: 230px;">
+          <%= image_submit_tag("https://vignette.wikia.nocookie.net/joke-battles/images/8/84/Game_Controller-512.png/revision/latest?cb=20151231235825", class: "waves-effect waves-light btn-img") %>
+        </div>
       <% end %>
+      </div>
+      <div class="md-form text-center white-text">
+      <h3>Cancel Account</h3>
+      <p>Unhappy? We'll be sad to see you go.</p>
+      <%= link_to "", registration_path(resource_name), onclick: "loadContent(1)", :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'fa fa-trash fa-lg text-danger' %>
     </div>
-    <fieldset>
-      <p>Leave these fields blank if you don't want to change your password.</p>
-      <div class="form-group">
-        <%= f.label :password %>
-        <%= f.password_field :password, :autocomplete => 'off', class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
-      </div>
-    </fieldset>
-    <fieldset>
-      <p>You must enter your current password to make changes.</p>
-      <div class="form-group">
-        <%= f.label :current_password %>
-        <%= f.password_field :current_password, class: 'form-control' %>
-      </div>
-    </fieldset>
-    <%= f.submit 'Update', :class => 'button right' %>
-  <% end %>
+  </div>
 </div>
-<div class="authform">
-<h3>Cancel Account</h3>
-<p>Unhappy? We'll be sad to see you go.</p>
-<%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button right' %>
-</div>
+<br><br>
+<%= link_to "", root_path, class: "fa fa-hand-o-left fa-2x faa-horizontal animated fa-fonts" %>

@@ -4245,12 +4245,12 @@ a.waves-effect, a.waves-light {
   .btn:not([disabled]):not(.disabled):active, .btn:not([disabled]):not(.disabled).active {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
-  .btn .fa {
+  .btn .fas {
     position: relative;
     font-size: 0.9rem; }
-    .btn .fa.right {
+    .btn .fas.right {
       margin-left: 0.3rem; }
-    .btn .fa.left {
+    .btn .fas.left {
       margin-right: 0.3rem; }
   .btn.btn-lg {
     padding: 1rem 2.4rem;

@@ -1,42 +1,64 @@
-<%= form_with(model: game, local: true) do |form| %>
-  <% if game.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
+<div class="container-small mt-2x mb">
+  <div class="card purple-border-4x">
+    <div class="card-block">
+      <div class="form-header indie-font goldenrod">
+        <h3 class="h3-responsive indie-font">New Game</h3>
+      </div>
+      <%= form_for(game) do |f| %>
+        <% if game.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
 
-      <ul>
-      <% game.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+            <ul>
+            <% game.errors.full_messages.each do |message| %>
+              <li class="red-text"><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="btn-group">
+          <i class="fas fa-camera-retro fa-2x prefix fa-fonts"></i> &nbsp;
+          <%= f.file_field :image, class:"white-text" %>
+          <div class="center">
+            <%= f.hidden_field :image_cache %>
+          </div>
+        </div>
+          <div class="container" style="width:200px;">
+            <%= image_tag(game.image.url) if game.image? %><br>
+          </div>
+
+          <div class="btn-group">
+          <%#= f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a category"}, {class: "select_tag btn btn-default"} %> <br> &nbsp;
+        </div>
+          <%#= f.label :category_id, class: "white-text" %>
+
+        <div class="md-form">
+          <i class="fas fa-tag prefix fa-fonts"></i>
+          <%= f.text_field :platform, placeholder: "Enter platform", :autofocus => true, class: 'form-control white-text' %>
+        </div>
+        <div class="md-form">
+          <i class="fas fa-tag prefix fa-fonts"></i>
+          <%= f.text_field :title, placeholder: "Enter title", class: 'form-control white-text' %>
+        </div>
+        <div class="md-form">
+          <i class="fas fa-tag prefix fa-fonts"></i>
+          <%= f.text_field :genre, placeholder: "Enter genre", class: 'form-control white-text' %>
+        </div>
+
+        <div class="md-form">
+          <i class="fas fa-pencil-alt prefix fa-fonts"></i>
+          <%= f.text_area :content, placeholder: "Enter description", class: 'md-textarea white-text' %>
+        </div>
+        <div class="md-form">
+          <i class="fas fa-calendar prefix fa-fonts"></i>
+          <%= f.date_field :release_date, class: ' white-text' %>
+        </div>
+
+        <div class="mx-auto" style="width: 230px;">
+          <%= image_submit_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-btn.png?raw=true", class: "waves-effect waves-light btn-img") %>
+        </div>
       <% end %>
-      </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :platform %>
-    <%= form.text_field :platform %>
   </div>
-
-  <div class="field">
-    <%= form.label :company %>
-    <%= form.text_field :company %>
-  </div>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
-
-  <div class="field">
-    <%= form.label :release_date %>
-    <%= form.date_select :release_date %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

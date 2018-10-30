@@ -1,8 +1,16 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :search, :show]
 
-  # GET /games
-  # GET /games.json
+
+  def search
+    if params[:search].present?
+      @games = Book.search(params[:search])
+    else
+      @games = Book.all
+    end
+  end
+
   def index
     @games = Game.all
   end
@@ -69,6 +77,6 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:platform, :company, :title, :content, :release_date)
+      params.require(:game).permit(:platform, :company, :genre, :title, :image, :content, :user_id, :release_date)
     end
 end
