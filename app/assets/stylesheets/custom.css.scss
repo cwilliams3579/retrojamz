@@ -1,6 +1,11 @@
 .navbar-brand, .title-font goldenrod {
   font-family: 'Bubblegum Sans', cursive;
-  color: #DAA520 !important;
+  // color: #DAA520 !important;
+  font-size: 4em;
+}
+
+.retro-header {
+  font-family: 'Bubblegum Sans', cursive;
 }
 
 .indie-font {
@@ -11,6 +16,11 @@ $primary-green: #21403F;
 $indigo: #3D466D;
 $orange-grad: #fc4a1a, #f7b733;
 $gold: #DAA520;
+$blue: rgb(1,113,239);
+
+.fa-fonts {
+  color: $blue !important;
+}
 
 .gold {
   background: $gold;
@@ -351,4 +361,12 @@ $gold: #DAA520;
 
 .goldenrod {
   color: goldenrod !important;
+}
+
+.p-top {
+  margin-top: 100px !important;
+}
+
+.p-top-2x {
+  margin-top: 200px !important;
 }

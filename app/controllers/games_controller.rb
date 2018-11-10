@@ -13,6 +13,7 @@ class GamesController < ApplicationController
 
   def index
     @games = Game.all
+    @game = Game.new
   end
 
   # GET /games/1
@@ -39,6 +40,7 @@ class GamesController < ApplicationController
     @game = current_user.games.new(params[:game_params])
     respond_to do |format|
       if @game.save
+        format.js
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
         format.json { render :show, status: :created, location: @game }
       else

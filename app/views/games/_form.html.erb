@@ -4,7 +4,7 @@
       <div class="form-header indie-font goldenrod">
         <h3 class="h3-responsive indie-font">New Game</h3>
       </div>
-      <%= form_for(game) do |f| %>
+      <%= form_for @game, remote: true do |f| %>
         <% if game.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
@@ -18,14 +18,14 @@
         <% end %>
 
         <div class="btn-group">
-          <i class="fas fa-camera-retro fa-2x prefix fa-fonts"></i> &nbsp;
+          <i class="fas fa-camera-retro fa-2x prefix purple-text"></i> &nbsp;
           <%= f.file_field :image, class:"white-text" %>
           <div class="center">
             <%= f.hidden_field :image_cache %>
           </div>
         </div>
-          <div class="container" style="width:200px;">
-            <%= image_tag(game.image.url) if game.image? %><br>
+          <div class="container" style="width:238px; height:358px;">
+            <%#= image_tag(game.image.url) if game.image? %><br>
           </div>
 
           <div class="btn-group">
@@ -55,8 +55,8 @@
           <%= f.date_field :release_date, class: ' white-text' %>
         </div>
 
-        <div class="mx-auto" style="width: 230px;">
-          <%= image_submit_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-btn.png?raw=true", class: "waves-effect waves-light btn-img") %>
+        <div class="mx-auto" style="width: 100px;">
+          <%= f.submit class: "waves-effect waves-light btn-success" %>
         </div>
       <% end %>
     </div>

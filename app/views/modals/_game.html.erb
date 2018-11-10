@@ -1,21 +1,57 @@
-    <!-- Grid column -->
-    <div class="col-xs-3">
+<!-- Grid column -->
+  <div class="col-sm-2 p-top-2x mx-auto">
       <!-- Card -->
-      <div class="card-cascade narrower card-ecommerce" style"width: 220px; height: 330px;">
+      <div class="card-cascade narrower card-ecommerce" style="width: 238px; height: 358px;">
         <!-- Card image -->
         <div class="view-cascade overlay">
-            <%= image_tag game.image.url, class: "card-img-top ", alt: "sample photo", style: "width:220px; height: 330px;" %>
+        <%= link_to game_path(game) do %>
+            <%= image_tag game.image.url, class: "card-img-top ", alt: "sample photo", style: "width:200px; height: 358px;" %>
+        <% end %>
           <a>
-
             <div class="mask rgba-white-slight"></div>
           </a>
         </div>
         <!-- Card image -->
+        <!-- Card content -->
+        <div class="card-body card-body-cascade text-center">
+          <!-- Category & Title -->
+          <a href="" class="white-text">
+            <h5> <%= game.title %> </h5>
+          </a>
+          <h4 class="card-title">
+            <strong>
+              <a href="">  </a>
+            </strong>
+          </h4>
+          <!--Rating-->
+          <ul class="rating">
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+          </ul>
+          <!-- Description -->
+          <p class="card-text"><%= game.content %>
+          </p>
+          <!-- Card footer -->
+        
+        </div>
+        <!-- Card content -->
       </div>
       <!-- Card -->
-    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
     <!-- Grid column -->
 
 
-  </div>
-  <!-- Grid row -->
+
