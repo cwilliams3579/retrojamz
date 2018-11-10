@@ -1,0 +1,159 @@
+<!-- Navbar -->
+<nav class="navbar fixed-top black navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+  <!-- SideNav slide-out button -->
+  <div class="float-left">
+    <a href="#" data-activates="slide-out" class="button-collapse">
+      <img src="https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-btn.png?raw=true" style="width:20px;">
+    </a>
+  </div>
+  <!-- Breadcrumb-->
+  <div class="breadcrumb-dn mr-auto">
+    <%# <a href="/" class="navbar-brand text-center white-text" style="font-family: 'Bubblegum Sans', cursive;', font-size:2em !important;">Retro Jamz</a> %>
+  </div>
+  <ul class="nav navbar-nav">
+    <li class="nav-item">
+        <div class="form-group md-form mt-0 pt-1 waves-light">
+          <div class="btn-group">
+                <a href="/" class="navbar-brand text-center blue-text" style="font-family: 'Bubblegum Sans', cursive;', font-size:2em !important;">Retro Jamz</a>
+          </div>
+        </div>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav nav-flex-icons ml-auto">
+    <li class="nav-item">
+      <a href="/games" class="nav-link">
+        <i class="fas fa-gamepad"></i>
+        <span class="clearfix d-none d-sm-inline-block indie-font">Games</span></a>
+    </li>
+    <li class="nav-item">
+      <a href="/posts" class="nav-link">
+        <i class="fas fa-comments"></i>
+        <span class="clearfix d-none d-sm-inline-block indie-font">Chat</span></a>
+    </li>
+    <li class="nav-item">
+      <a href="/pages/gallery" class="nav-link">
+        <i class="fas fa-camera-retro"></i>
+        <span class="clearfix d-none d-sm-inline-block indie-font">Gallery</span></a>
+    </li>
+    <li class="nav-item">
+      <a href="/pages/gallery" class="nav-link">
+        <i class="fas fa-cogs"></i>
+        <span class="clearfix d-none d-sm-inline-block indie-font">Settings</span></a>
+    </li>
+    <li class="nav-item">
+      <a href="/pages/about" class="nav-link">
+        <i class="fas fa-id-card"></i>
+        <span class="clearfix d-none d-sm-inline-block indie-font">About</span></a>
+    </li>
+    <% if current_user %>
+    <li class="nav-item">
+      <%#= current_user.first_name %>
+      <%= link_to gravatar_for(current_user), edit_user_registration_path, size: 20, :class => 'gravatar nav-link' %>
+      <span class="clearfix d-none d-sm-inline-block"></span>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" rel="nofollow" data-method="delete" href="/users/sign_out">
+        <i class="fas fa-sign-out-alt"></i>
+        <span class="hidden-sm-down indie-font">Sign Out</span>
+      </a>
+    </li>
+
+      <% else %>
+        <li class="nav-item">
+          <a href="/users/sign_up" class="nav-link">
+            <i class="fas fa-user-plus"></i>
+            <span class="clearfix d-none d-sm-inline-block indie-font">Sign Up</span></a>
+        </li>
+        <li class="nav-item">
+          <a href="/users/sign_in" class="nav-link">
+            <i class="fas fa-sign-in-alt"></i>
+            <span class="clearfix d-none d-sm-inline-block indie-font">Sign In</span></a>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+  <!-- /.Navbar -->
+<div id="wrapper">
+
+        <!-- Left Sidebar -->
+        <div id="left-sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Left Sidebar
+                    </a>
+                </li>
+                <li>
+                    <a data-toggle="collapse" href="#dashboard" aria-expanded="false">Dashboard <span class="caret"></span></a>
+                    <div class="collapse sub-bar" id="dashboard">
+                        <a href="#">Dashboard Sub 1</a>
+                        <a data-toggle="collapse" href="#dashboard-sub-2" aria-expanded="false">Dashboard Sub 2 <span class="caret"></span></a>
+                        <div class="collapse sub-bar" id="dashboard-sub-2">
+                            <a href="#">Dashboard Sub Sub 1</a>
+                            <a data-toggle="collapse" href="#dashboard-sub-sub-2" aria-expanded="false">Dashboard Sub Sub 2 <span class="caret"></span></a>
+                            <div class="collapse sub-bar" id="dashboard-sub-sub-2">
+                                <a href="#">Dashboard Sub Sub Sub 1</a>
+                                <a href="#">Dashboard Sub Sub Sub 2</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                 <!-- Logo -->
+      <li>
+        <div class="logo-wrapper waves-light" style="height:170px !important;">
+          <%= link_to (image_tag("https://pre00.deviantart.net/d9e5/th/pre/i/2017/034/0/5/commission__megaman_neo_by_ultimatemaverickx-daxqfyc.png")), root_path, class: "img-fluid flex-center", id:"lion-logo", rel: "gallery", onclick:"loadContent(1)" %>
+        </div>
+      <!--/. Logo -->
+              <!--Search Form-->
+              <li>
+                <%= form_tag search_games_path, method: :get, class: "search-form" do %>
+                  <div class="form-group md-form mt-0 pt-1 waves-light">
+                    <%= text_field_tag :search, params[:search], class: "form-control white-text", placeholder: "Search" %>
+                  </div>
+                <% end %>
+              </li>
+              <!--/.Search Form-->
+                <li>
+                    <a data-toggle="collapse" href="#shortcuts" aria-expanded="false">Shortcuts <span class="caret"></span></a>
+                    <div class="collapse sub-bar" id="shortcuts">
+                        <a data-toggle="collapse" href="#shortcuts-sub-1" aria-expanded="false">Shortcuts Sub 1 <span class="caret"></span></a>
+                        <div class="collapse sub-bar" id="shortcuts-sub-1">
+                            <a href="#">Shortcuts Sub Sub 1</a>
+                            <a href="#">Shortcuts Sub Sub 2</a>
+                        </div>
+                        <a href="#">Shortcuts Sub 2</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#left-sidebar-wrapper -->
+
+        <!-- Right Sidebar -->
+        <div id="right-sidebar-wrapper">
+          <div id="current_game"></div>
+        </div>
+        <!-- /#right-sidebar-wrapper -->
+
+        <!-- Toggle Buttons -->
+        <a href="#left-menu-toggle" class="btn btn-link btn-md" id="left-menu-toggle"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        <a href="#right-menu-toggle" class="btn btn-link btn-md" id="right-menu-toggle"><span class="glyphicon glyphicon-chevron-right"></span></a>
+
+
+
+    </div>
+    <!-- /#wrapper -->

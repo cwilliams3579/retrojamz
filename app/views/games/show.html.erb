@@ -1,29 +1,121 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
 
-<p>
-  <strong>Platform:</strong>
-  <%= @game.platform %>
-</p>
+  <div class="col-md-6 mt mb">
+    <!-- Projects section v.3 -->
+  <section class="my-5">
 
-<p>
-  <strong>Company:</strong>
-  <%= @game.company %>
-</p>
+    <!-- Section heading -->
+    <h2 class="h1-responsive font-weight-bold text-center my-5 indie-font goldenrod"><%= @game.title %></h2>
+    <!-- Section description -->
 
-<p>
-  <strong>Title:</strong>
-  <%= @game.title %>
-</p>
+    <!-- Grid row -->
+    <div class="row">
 
-<p>
-  <strong>Content:</strong>
-  <%= @game.content %>
-</p>
 
-<p>
-  <strong>Release date:</strong>
-  <%= @game.release_date %>
-</p>
+      <!-- Grid column -->
+      <div class="col-lg-5 mb-lg-0 mb-5">
+        <!--Image-->
+        <%= image_tag(@game.image.url, class: "img-fluid rounded z-depth-1", alt: "Sample project image") %>
+        <div class="star-rating mx-auto" data-turbolinks="false" data-score= <%#= @avg_rating %> ></div> <br>
+        <p class="text-center"><%#= "#{@reviews.length} reviews" %></p>
+        <div class="btn-group">
+          <%#= link_to  game_likes_path(@game, like: "like"), remote: true, method: :post do %>
+            <span id='like'><i class="like fa fa-thumbs-up fa-lg goldenrod ml-3"></i></span>
+          <%# end %> &nbsp;<span class="badge purple darken-2"><%#= @game.likes_total %></span></i>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+          <%#= link_to game_likes_path(@game, like: "dislike"), remote: true, method: :post do %>
+            <span id='dislike'><i class="dislike fa fa-thumbs-down fa-lg goldenrod ml-3"></i></span>
+          <%# end %> &nbsp;<span class="badge purple darken-2"><%#= @game.dislikes_total %></span></i>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-lg-7">
+
+        <!-- Grid row -->
+        <div class="row mb-3">
+          <div class="col-md-1 col-2">
+            <i class="fa fa-game fa-2x goldenrod"></i>
+          </div>
+          <div class="col-md-11 col-10">
+            <h5 class="font-weight-bold mb-3"> <%#= link_to Category.find(@game.category_id).name, category_path(@game.category_id), class: "purple-text indie-font" %> </h5>
+            <small class="font-weight-bold mb-3">Uploaded by <%= @game.user.name  %></small>
+            <p class="grey-text"><%= @game.content %></p>
+
+            <%# if can? :edit, :destroy, @game %>
+              <%= link_to '', edit_game_path(@game), class: "fas fa-edit fa-lg goldenrod", toggle: "tooltip", placement: "top", title:"Edit" %> &nbsp;
+              <%= link_to '', @game, class: "fa fa-trash text-danger", toggle: "tooltip", placement: "top", title:"Delete", onclick:"loadContent(1)", :method => :delete, :data => {:confirm => "You Sure?"} %> &nbsp;
+            <%# else %>
+              <%#= link_to '', new_game_review_path(@game), class: "fas fa-pencil-alt fa-lg goldenrod", toggle: "tooltip", placement: "top", title:"Write A Review!" %> &nbsp;
+            <%# end %>
+          </div>
+        </div>
+        <!-- Grid row -->
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  </section>
+  <!-- Projects section v.3 -->
+
+  </div>
+
+<!-- Section: Testimonials v.2 -->
+<section class="text-center col-md-6 mt-2x">
+<%# if @reviews.blank? %>
+  <!-- Section heading -->
+  <!-- <h4 class="h4-responsive font-weight-bold my-5 grey-text">No reviews yet. Be the first to write one!</h4> -->
+  <%#= link_to '', new_game_review_path(@game), class: "fas fa-pencil-alt fa-lg goldenrod" %>
+<%# else %>
+  <!-- <h4 class="h4-responsive font-weight-bold my-5 indie-font goldenrod">Reviews</h4> -->
+ <!-- Carousel Wrapper -->
+  <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel" data-interval="false">
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+      <%# @reviews.each do |review| %>
+      <!--First slide-->
+      <div class=" active">
+        <div class="testimonial">
+          <!--Content-->
+          <div class="star-rating" data-turbolinks="false" data-score= <%#= review.rating %> ></div>
+          <p class="purple-text">
+            <%#= "#{review.user.first_name.capitalize} #{review.user.last_name.capitalize[0]}." %>
+            <%#= review.created_at.strftime("%-m/%-d/%Y") %>
+          </p>
+          <p class="grey-text">
+            <i class="fa fa-quote-left"></i> <%#= h(review.comment).gsub(/\n/, '<br/>').html_safe %> <i class="fa fa-quote-right"></i>
+          </p>
+          <%# if user_signed_in? %>
+            <%# if (review.user == current_user) || (current_user.admin?) %>
+              <%#= link_to "", edit_game_review_path(@game, review), class: "fas fa-edit goldenrod" %> &nbsp;
+              <%#= link_to " ", game_review_path(@game, review), toggle: "tooltip", placement: "top", title:"Delete", onclick:"loadContent(1)", :method => :delete, :data => {:confirm => "You Sure?"}, class: "fas fa-trash text-danger" %>
+            <%# end %>
+          <%# end %>
+          <!--Review-->
+         <hr class="my-5">
+        </div>
+      </div>
+      <!--First slide-->
+    <%# end %>
+    </div>
+    <!--Slides-->
+
+  </div>
+  <!-- Carousel Wrapper -->
+<%# end %>
+</section>
+<!-- Section: Testimonials v.2 -->
+</div>
+
+<%= link_to '', games_path, class: "fas fa-hand-o-left fa-2x", toggle: "tooltip", placement: "top", title:"Back" %>
+
+<script type="text/javascript">
+  $('.star-rating').raty({
+    path: 'https://s3.amazonaws.com/yelp-clone-rails/stars',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score')
+    }
+  });
+</script>

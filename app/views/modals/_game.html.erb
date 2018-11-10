@@ -1,24 +1,10 @@
-
-<!-- Section: Products v.1 -->
-<section class="text-center my-5">
-
-  <!-- Section heading -->
-  <h3 class="h1-responsive font-weight-bold text-center my-5">PC Games</h3>
-  <!-- Section heading -->
-
-  <!-- Grid row -->
-  <div class="row">
-
- <% @games.each do |game| %>
     <!-- Grid column -->
     <div class="col-xs-3">
       <!-- Card -->
       <div class="card-cascade narrower card-ecommerce" style"width: 220px; height: 330px;">
         <!-- Card image -->
         <div class="view-cascade overlay">
-          <%= link_to game, remote: true do %>
             <%= image_tag game.image.url, class: "card-img-top ", alt: "sample photo", style: "width:220px; height: 330px;" %>
-          <% end %>
           <a>
 
             <div class="mask rgba-white-slight"></div>
@@ -30,14 +16,6 @@
     </div>&nbsp;&nbsp;&nbsp;&nbsp;
     <!-- Grid column -->
 
-   <% end %>
 
   </div>
   <!-- Grid row -->
-
-</section>
-<!-- Section: Products v.1 -->
-
-<br>
-
-<%= link_to 'New Game', new_game_path %>

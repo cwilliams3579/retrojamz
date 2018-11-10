@@ -22312,7 +22312,7 @@ html [type=button] {
     padding: 16px 12px
 }
 
-a.pswp__share--facebook:before {
+a.pswp__share--facegame:before {
     content: "";
     display: block;
     width: 0;
@@ -22327,12 +22327,12 @@ a.pswp__share--facebook:before {
     pointer-events: none
 }
 
-a.pswp__share--facebook:hover {
+a.pswp__share--facegame:hover {
     background: #3e5c9a;
     color: #fff
 }
 
-a.pswp__share--facebook:hover:before {
+a.pswp__share--facegame:hover:before {
     border-bottom-color: #3e5c9a
 }
 
@@ -33640,7 +33640,7 @@ form.ajax-auth {
     text-indent: 0
 }
 
-.ajax-auth .wp-social-login-provider-facebook:before {
+.ajax-auth .wp-social-login-provider-facegame:before {
     content: "\f09a"
 }
 
@@ -34029,11 +34029,11 @@ form.ajax-auth {
     content: "\f02c"
 }
 
-.fa-book:before {
+.fa-game:before {
     content: "\f02d"
 }
 
-.fa-bookmark:before {
+.fa-gamemark:before {
     content: "\f02e"
 }
 
@@ -34356,7 +34356,7 @@ form.ajax-auth {
     content: "\f081"
 }
 
-.fa-facebook-square:before {
+.fa-facegame-square:before {
     content: "\f082"
 }
 
@@ -34437,7 +34437,7 @@ form.ajax-auth {
     content: "\f096"
 }
 
-.fa-bookmark-o:before {
+.fa-gamemark-o:before {
     content: "\f097"
 }
 
@@ -34449,8 +34449,8 @@ form.ajax-auth {
     content: "\f099"
 }
 
-.fa-facebook-f:before,
-.fa-facebook:before {
+.fa-facegame-f:before,
+.fa-facegame:before {
     content: "\f09a"
 }
 
@@ -35970,7 +35970,7 @@ form.ajax-auth {
     content: "\f22d"
 }
 
-.fa-facebook-official:before {
+.fa-facegame-official:before {
     content: "\f230"
 }
 
@@ -36506,11 +36506,11 @@ form.ajax-auth {
     content: "\f2b8"
 }
 
-.fa-address-book:before {
+.fa-address-game:before {
     content: "\f2b9"
 }
 
-.fa-address-book-o:before {
+.fa-address-game-o:before {
     content: "\f2ba"
 }
 

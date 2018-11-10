@@ -14,12 +14,11 @@
 
       <!--Search Form-->
       <li>
-        <%#= form_tag search_games_path, method: :get, class: "search-form" do %>
+        <%= form_tag search_games_path, method: :get, class: "search-form" do %>
           <div class="form-group md-form mt-0 pt-1 waves-light">
-            <%#= text_field_tag :search, params[:search], class: "form-control white-text", placeholder: "Search" %>
-            <%#= submit_tag "Seach", name: nil, class: "btn btn-outline-gold" %>
+            <%= text_field_tag :search, params[:search], class: "form-control white-text", placeholder: "Search" %>
           </div>
-        <%# end %>
+        <% end %>
       </li>
       <!--/.Search Form-->
 
@@ -46,7 +45,7 @@
                 <ul class="list-unstyled">
                     <li>
                       <%# Category.all.each do |category| %>
-                        <%#= link_to category.name, books_path(category: category.name), class: "dropdown-item" %>
+                        <%#= link_to category.name, games_path(category: category.name), class: "dropdown-item" %>
                       <%# end %>
                     </li>
                     <%# if can? :create, @category %>
@@ -110,7 +109,7 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="nav-item">
-        <%#= form_tag search_books_path, method: :get, class: "search-form center" do %>
+        <%#= form_tag search_games_path, method: :get, class: "search-form center" do %>
           <div class="form-group md-form mt-0 pt-1 waves-light">
             <div class="btn-group">
               <%#= text_field_tag :search, params[:search], class: "form-control white-text indie-font", placeholder: "Search" %>
@@ -176,5 +175,102 @@
       </ul>
     </nav>
     <!-- /.Navbar -->
+
   </header>
   <!--/.Double navigation-->
+
+  <!-- Sidebar navigation -->
+  <div id="slide-out" class="side-nav fixed sn-bg-1 custom-scrollbar">
+    <ul class="custom-scrollbar">
+      <!-- Logo -->
+      <li>
+        <div class="logo-wrapper waves-light" style="height:170px !important;">
+          <%= link_to (image_tag("https://pre00.deviantart.net/d9e5/th/pre/i/2017/034/0/5/commission__megaman_neo_by_ultimatemaverickx-daxqfyc.png")), root_path, class: "img-fluid flex-center", id:"lion-logo", rel: "gallery", onclick:"loadContent(1)" %>
+        </div>
+
+
+      <!--/. Logo -->
+
+      <!--Search Form-->
+      <li>
+        <%= form_tag search_games_path, method: :get, class: "search-form" do %>
+          <div class="form-group md-form mt-0 pt-1 waves-light">
+            <%= text_field_tag :search, params[:search], class: "form-control white-text", placeholder: "Search" %>
+          </div>
+        <% end %>
+      </li>
+      <!--/.Search Form-->
+
+      <!-- Side navigation links -->
+      <li>
+        <ul class="collapsible collapsible-accordion">
+            <li>
+              <a class="collapsible-header waves-effect arrow-r indie-font"><i class="fas fa-gamepad"></i> Games<i class="fas fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul class="list-unstyled">
+                    <li><a href="/games" class="waves-effect">Games</a>
+                    </li>
+                    <%# if can? :create, @game %>
+                      <li>
+                        <a href="/games/new" class="waves-effect">New Game</a>
+                      </li>
+                    <%# end %>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a class="collapsible-header waves-effect arrow-r indie-font"><i class="fas fa-eye"></i> Browse<i class="fas fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul class="list-unstyled">
+                    <li>
+                      <%# Category.all.each do |category| %>
+                        <%#= link_to category.name, games_path(category: category.name), class: "dropdown-item" %>
+                      <%# end %>
+                    </li>
+                    <%# if can? :create, @category %>
+                      <li>
+                        <%#= link_to 'New Category', new_category_path %>
+                      </li>
+                    <%# end %>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a class="collapsible-header waves-effect arrow-r indie-font"><i class="fas fa-camera-retro"></i> Gallery<i class="fas fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul class="list-unstyled">
+                    <li><a href="/pages/gallery" class="waves-effect">Image Gallery</a>
+                    </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a class="collapsible-header waves-effect arrow-r indie-font"><i class="fas fa-eye"></i> Settings<i class="fas fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="/pages/about" class="waves-effect">About Me</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a class="collapsible-header waves-effect arrow-r indie-font"><i class="fas fa-question"></i> Help<i class="fas fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#" class="waves-effect">FAQ</a>
+                  </li>
+                  <li>
+                    <a href="#" class="waves-effect">Write a message</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+        </ul>
+      </li>
+      <!-- Side navigation links -->
+    </ul>
+    <div class="sidenav-bg mask-strong"></div>
+  </div>
+  <!--/. Sidebar navigation -->

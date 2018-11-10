@@ -44,9 +44,10 @@ group :development do
   gem 'binding_of_caller'
   gem 'guard', '~> 2.14', '>= 2.14.2'
   gem 'guard-bundler', '~> 2.1'
-  gem 'guard-rails', '~> 0.8.1'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
   gem 'guard-rubocop', '~> 1.3'
+  gem 'guard-rails', '~> 0.8.1'
+  gem 'guard-migrate', '~> 2.0'
   gem 'hub', :require=>nil
   gem 'rails_layout'
 end

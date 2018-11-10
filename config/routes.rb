@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  resources :games
   root to: 'games#index'
   devise_for :users
-  resources :users
+
+  resources :games do
+    # resources :reviews, except: [:index, :show]
+    # resources :comments, :likes, only: [:create]
+    # resources :likes, only: [:create]
+    collection do
+      get 'search'
+    end
+  end
 end

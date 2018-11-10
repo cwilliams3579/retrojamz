@@ -5,9 +5,9 @@ class GamesController < ApplicationController
 
   def search
     if params[:search].present?
-      @games = Book.search(params[:search])
+      @games = Game.search(params[:search])
     else
-      @games = Book.all
+      @games = Game.all
     end
   end
 
@@ -18,11 +18,14 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+    # respond_to do |format|
+    #   format.js {render layout: false} # Add this line to you respond_to block
+    # end
   end
 
   # GET /games/new
   def new
-    @game = Game.new
+    @game = current_user.games.build
   end
 
   # GET /games/1/edit
@@ -32,8 +35,8 @@ class GamesController < ApplicationController
   # POST /games
   # POST /games.json
   def create
-    @game = Game.new(game_params)
-
+    # @game = Game.new(game_params)
+    @game = current_user.games.new(params[:game_params])
     respond_to do |format|
       if @game.save
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
@@ -45,8 +48,7 @@ class GamesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /games/1
-  # PATCH/PUT /games/1.json
+
   def update
     respond_to do |format|
       if @game.update(game_params)
@@ -59,8 +61,7 @@ class GamesController < ApplicationController
     end
   end
 
-  # DELETE /games/1
-  # DELETE /games/1.json
+
   def destroy
     @game.destroy
     respond_to do |format|
@@ -75,7 +76,6 @@ class GamesController < ApplicationController
       @game = Game.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
       params.require(:game).permit(:platform, :company, :genre, :title, :image, :content, :user_id, :release_date)
     end

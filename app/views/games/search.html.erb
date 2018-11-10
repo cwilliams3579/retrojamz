@@ -1,0 +1,95 @@
+<div class="container mt-2x mb">
+    <!-- Section: Products v.1 -->
+  <section class="text-center my-5">
+
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <% @games.each do |game| %>
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
+        <!-- Card -->
+        <div class="card card-cascade narrower card-ecommerce">
+          <!-- Card image -->
+          <div class="view view-cascade overlay">
+            <%= image_tag game.image.url, class: "card-img-top", alt: "sample photo", style: "width:198px; height: 297px;" %>
+            <a>
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+          <!-- Card image -->
+          <!-- Card content -->
+          <div class="card-body card-body-cascade text-center">
+            <!-- Category & Title -->
+
+              <h6 class="h6-responsive"><%#= link_to Category.find(game.category_id).name, category_path(game.category_id), class: "purple-text" %></h6>
+
+            <h6 class="card-title goldenrod">
+              <strong class="indie-font goldenrod">
+                <%= link_to game.title, game_path(game), class: "indie-font goldenrod" %>
+              </strong>
+            </h6>
+            <!--Rating-->
+            <ul class="rating">
+              <li>
+
+                <%#= link_to new_game_review_path(game) do %>
+                  <div id="star-rating" data-turbolinks="false" data-score= <%#= @avg_rating %> ></div>
+                <%# end %>
+              </li>
+            </ul>
+            <!-- Description -->
+            <p class="card-text">
+              <%= truncate(game.content, length: 150) %>
+            </p>
+            <!-- Card footer -->
+            <div class="card-footer px-1">
+
+              <span class="center">
+
+                <%= link_to '', game_path(game), toggle: "tooltip", placement: "top", title: "See More", class: "fas fa-eye grey-text ml-3" %>
+                <a data-toggle="tooltip" data-placement="top" title="Like">
+                  <i class="fas fa-thumbs-up grey-text ml-3"></i>
+                </a>
+                <a data-toggle="tooltip" data-placement="top" title="Dislike">
+                  <i class="fas fa-thumbs-down grey-text ml-3"></i>
+                </a>
+                <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
+                  <i class="fa fa-shopping-cart grey-text ml-3"></i>
+                </a>
+                <% if current_user %>
+                   &nbsp;
+                  <%= link_to '', edit_game_path(game), class: "fas fa-pencil-alt gold-text", toggle: "tooltip", placement: "top", title:"Edit" %>
+
+                  &nbsp;
+                <%= link_to '', game, class: "fa fa-trash active",toggle: "tooltip", placement: "top", title:"Destroy", onclick:"loadContent(1)", method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+              </span>
+            </div>
+          </div>
+          <!-- Card content -->
+        </div>
+        <!-- Card -->
+      </div>
+      <!-- Grid column -->
+
+      <% end %>
+    </div>
+    <!-- Grid row -->
+  </section>
+  <!-- Section: Products v.1 -->
+  <br>
+
+  <% if user_signed_in? %>
+    <div class="center">
+      <%= link_to '', new_game_path, class: "fas fa-game fa-2x goldenrod" %>
+    </div>
+  <% end %>
+</div>
+
+
+<script type="text/javascript">
+  $('#star-rating').raty({
+    path: 'https://s3.amazonaws.com/yelp-clone-rails/stars',
+    scoreName: 'review[rating]'
+  });
+</script>

@@ -12,11 +12,43 @@
   </head>
   <body class="fixed-sn black-skin">
     <header>
-      <%= render 'layouts/navigation' %>
+      <%= render 'layouts/nav' %>
     </header>
     <main role="main">
        <%= render 'layouts/messages' %>
        <%= yield %>
     </main>
+
+    <!-- Menu Toggle Script -->
+ <script>
+    // SideNav Initialization
+    $(".button-collapse").sideNav();
+</script>
+
+<!-- Menu Toggle Script -->
+<script>
+$("#left-menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("left-toggled");
+});
+
+$("#right-menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("right-toggled");
+});
+</script>
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://mdbootstrap.com/previews/docs/latest/js/jquery-3.2.1.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://mdbootstrap.com/previews/docs/latest/js/bootstrap.min.js"></script>
+<!-- Tooltips -->
+<script type="text/javascript" src="https://mdbootstrap.com/previews/docs/latest/js/popper.min.js"></script>
+<!-- MDB -->
+<script type="text/javascript" src="https://mdbootstrap.com/previews/docs/latest/js/mdb.min.js"></script>
+<!-- Raty -->
+<script type="text/plain" src="https://raw.githubusercontent.com/wbotelhos/raty/master/lib/jquery.raty.js"></script>
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>-->
   </body>
 </html>

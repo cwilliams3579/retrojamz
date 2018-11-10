@@ -343,10 +343,10 @@
 .fa-tags:before {
   content: "\f02c";
 }
-.fa-book:before {
+.fa-game:before {
   content: "\f02d";
 }
-.fa-bookmark:before {
+.fa-gamemark:before {
   content: "\f02e";
 }
 .fa-print:before {
@@ -584,7 +584,7 @@
 .fa-twitter-square:before {
   content: "\f081";
 }
-.fa-facebook-square:before {
+.fa-facegame-square:before {
   content: "\f082";
 }
 .fa-camera-retro:before {
@@ -645,7 +645,7 @@
 .fa-square-o:before {
   content: "\f096";
 }
-.fa-bookmark-o:before {
+.fa-gamemark-o:before {
   content: "\f097";
 }
 .fa-phone-square:before {
@@ -654,7 +654,7 @@
 .fa-twitter:before {
   content: "\f099";
 }
-.fa-facebook:before {
+.fa-facegame:before {
   content: "\f09a";
 }
 .fa-github:before {
